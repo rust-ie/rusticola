@@ -1,16 +1,16 @@
 {
-  "name": "11ty-solid-base",
+  "name": "rusticola",
   "version": "0.1.1",
-  "description": "A minimal HTML5 template and the esbuild setup to compile your Solidjs app alongside 11ty.",
+  "description": "A 11ty website by Woodcox.",
   "main": "docs/index.html",
   "scripts": {
     "clean": "node config/clean/clean.js",
     "dev:sass": "sass  --no-source-map --watch src/sass:./_tmp",
     "dev:eleventy": "ELEVENTY_ENV=dev npx @11ty/eleventy-dev-server --input=docs",
     "build:sass": "sass  --no-source-map src/sass:./_tmp",
-    "build:eleventy": "ELEVENTY_ENV=dev npx @11ty/eleventy --pathprefix=11ty-solid-base",
+    "build:eleventy": "ELEVENTY_ENV=dev npx @11ty/eleventy --pathprefix=rusticola",
     "blitz:eleventy": "ELEVENTY_ENV=dev npx @11ty/eleventy",
-    "minify:eleventy": "ELEVENTY_ENV=prod npx @11ty/eleventy --pathprefix=11ty-solid-base",
+    "minify:eleventy": "ELEVENTY_ENV=prod npx @11ty/eleventy --pathprefix=rusticola",
     "build:processcss": "BROWSERSLIST_CONFIG='./package.json' lightningcss ./_tmp/*.css -o ./_tmp/*.css",
     "minify:processcss": "BROWSERSLIST_CONFIG='./package.json' lightningcss --minify ./_tmp/*.css -o ./_tmp/*.css",
     "start": "NODE_ENV=dev npm-run-all --parallel dev:sass dev:eleventy",
@@ -22,7 +22,7 @@
     "type": "git",
     "url": "git+https://github.com/woodcock3/11ty-solid-start.git"
   },
-  "author": "woodcock3",
+  "author": "woodcox",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0-canary.18",
@@ -31,12 +31,14 @@
     "@hyrious/esbuild-plugin-http": "^0.1.1",
     "esbuild": "^0.15.18",
     "esbuild-plugin-manifest": "^0.5.0",
+    "esbuild-svelte": "^0.7.3",
     "esbuild-plugin-solid": "^0.4.2",
     "glob-all": "^3.3.1",
     "lightningcss-cli": "^1.17.1",
     "npm-run-all": "^4.1.5",
     "sass": "^1.57.1",
-    "solid-js": "^1.6.6"
+    "solid-js": "^1.6.6",
+    "svelte": "^3.55.0"
   },
   "browserslist": [
     "> 0.2%",
