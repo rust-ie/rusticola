@@ -27,7 +27,7 @@ deleteFolderRecursive("./_tmp");
 console.log("Successfully cleaned working tree!");
 
 // recreate directory
-var dir = './docs';
+var dir = './docs/assets';
 
 if (!fs.existsSync(dir)){
     fs.mkdirSync(dir);
