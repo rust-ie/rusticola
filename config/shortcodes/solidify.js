@@ -14,7 +14,6 @@ module.exports = async (code, filename, bundled) => {
     entryPoints: glob.sync(['solid-*.jsx']),
     entryNames: '[name]',
     outdir: './docs/assets/app',
-    outExtension: { '.js': '.mjs' },
     bundle: bundleJsx,
     watch: !isProd,
     format: 'esm',
@@ -32,6 +31,6 @@ module.exports = async (code, filename, bundled) => {
     console.error(err);
     process.exitCode = 1;
   })
-  const solidifyJsx= await fsPromises.readFile('./solid-' + filename + '.js', 'utf8');
+  const solidifyJsx= await fsPromises.readFile('./docs/assets/app/solid-' + filename + '.js', 'utf8');
   return `<script type="module">${solidifyJsx}</script>`;
 };
