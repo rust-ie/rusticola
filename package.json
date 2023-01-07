@@ -8,7 +8,6 @@
     "dev:sass": "sass  --no-source-map --watch src/sass:./_tmp",
     "dev:eleventy": "ELEVENTY_ENV=dev npx @11ty/eleventy-dev-server --input=docs",
     "build:sass": "sass  --no-source-map src/sass:./_tmp",
-    // how to use $npm config https://dev.to/felipperegazio/handling-command-line-arguments-in-npm-scripts-2ean
     "build:eleventy": "ELEVENTY_ENV=$npm_config_stage npx @11ty/eleventy --pathprefix=rusticola",
     "build:css": "BROWSERSLIST_CONFIG='./package.json' lightningcss ./_tmp/*.css -o ./_tmp/*.css",
     "minify:css": "npm run build:css -- --minify",
