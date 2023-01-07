@@ -3,6 +3,7 @@ const esbuild = require('esbuild');
 const glob = require('glob-all'); // to enable * glob pattern in esbuild
 const isProd = process.env.ELEVENTY_ENV === 'prod' ? true : false;
 const { solidPlugin } = require('esbuild-plugin-solid');
+const { sveltePlugin } = require('esbuild-svelte');
 const manifestPlugin = require('esbuild-plugin-manifest');
 const { http, default_schemes } = require('@hyrious/esbuild-plugin-http');
 const fs = require('fs');
@@ -22,7 +23,8 @@ module.exports = async () => {
         schemes: { default_schemes },
         cache: new Map()
       }),
-      solidPlugin(), 
+      solidPlugin(),
+      sveltePlugin(),
       manifestPlugin({
         // NOTE: Save to src/_data. This is always relative to `outdir`.
         filename: '../../src/_data/manifest.json',
