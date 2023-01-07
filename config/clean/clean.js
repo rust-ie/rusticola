@@ -21,7 +21,7 @@ function deleteFolderRecursive(path) {
 console.log("Cleaning working tree...");
 
 // Add any folers here you want to delete prior to build
-deleteFolderRecursive("./docs");
+deleteFolderRecursive("./docs/assets");
 deleteFolderRecursive("./_tmp");
 
 console.log("Successfully cleaned working tree!");
