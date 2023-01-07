@@ -1,4 +1,4 @@
-# 11ty Solid Base
+# Rusticola
 
 A minimal base HTML5 template and the esbuild setup to compile your SolidJS app alongside 11ty.
 
