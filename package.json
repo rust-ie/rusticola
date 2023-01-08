@@ -14,7 +14,7 @@
     "start": "NODE_ENV=dev npm-run-all --parallel dev:**",
     "cloud": "NODE_ENV=dev npm-run-all clean build:sass build:eleventy",
     "build": "NODE_ENV=dev npm-run-all clean build:sass build:css build:eleventy -- --pathprefix=rusticola",
-    "minify": "NODE_ENV=production eleventy_env=prod npm-run-all clean build:sass minify:css build:eleventy -- --pathprefix=rusticola"
+    "minify": "NODE_ENV=production --eleventy-env=prod npm-run-all clean build:sass minify:css build:eleventy -- --pathprefix=rusticola"
   },
   "repository": {
     "type": "git",
