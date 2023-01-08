@@ -13,8 +13,8 @@
     "minify:css": "npm run build:css -- --minify",
     "start": "NODE_ENV=dev npm-run-all --parallel dev:**",
     "cloud": "NODE_ENV=dev npm-run-all clean build:sass build:eleventy",
-    "build": "NODE_ENV=dev npm-run-all clean build:sass build:css -- ELEVENTY_ENV=dev build:eleventy -- --pathprefix=rusticola",
-    "minify": "NODE_ENV=production npm-run-all clean build:sass minify:css -- ELEVENTY_ENV=prod build:eleventy -- --pathprefix=rusticola"
+    "build": "NODE_ENV=dev npm-run-all clean build:sass build:css build:eleventy -- ELEVENTY_ENV=dev --pathprefix=rusticola",
+    "minify": "NODE_ENV=production npm-run-all clean build:sass minify:css build:eleventy -- ELEVENTY_ENV=prod --pathprefix=rusticola"
   },
   "repository": {
     "type": "git",
