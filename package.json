@@ -12,7 +12,7 @@
     "build:css": "BROWSERSLIST_CONFIG='./package.json' lightningcss ./_tmp/*.css -o ./_tmp/*.css",
     "minify:css": "npm run build:css -- --minify",
     "start": "NODE_ENV=dev conc 'dev:*'",
-    "cloud": "run clean && NODE_ENV=dev npm run build:sass && NODE_ENV=dev ELEVENTY_ENV=dev build:eleventy",
+    "cloud": "run clean && NODE_ENV=dev npm run build:sass && NODE_ENV=dev ELEVENTY_ENV=dev npm run build:eleventy",
     "build": "npm run clean && NODE_ENV=dev npm run build:sass && NODE_ENV=dev npm run build:css && NODE_ENV=dev ELEVENTY_ENV=dev npm run build:eleventy -- --pathprefix=rusticola",
     "minify": "npm run clean && NODE_ENV=production npm run build:sass && NODE_ENV=production npm run minify:css && NODE_ENV=production ELEVENTY_ENV=prod npm run build:eleventy -- --pathprefix=rusticola"
   },
