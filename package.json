@@ -8,14 +8,13 @@
     "dev:sass": "sass  --no-source-map --watch src/sass:./_tmp",
     "dev:eleventy": "ELEVENTY_ENV=dev npx @11ty/eleventy-dev-server --input=docs",
     "build:sass": "sass  --no-source-map src/sass:./_tmp",
-    "build:eleventy": "ELEVENTY_ENV=dev npx @11ty/eleventy",
-    "minify:eleventy": "ELEVENTY_ENV=prod npx @11ty/eleventy",
+    "build:eleventy": "npx @11ty/eleventy",
     "build:css": "BROWSERSLIST_CONFIG='./package.json' lightningcss ./_tmp/*.css -o ./_tmp/*.css",
     "minify:css": "npm run build:css -- --minify",
-    "start": "NODE_ENV=dev npm-run-all --parallel dev:**",
-    "cloud": "NODE_ENV=dev npm-run-all clean build:sass build:eleventy",
-    "build": "NODE_ENV=dev npm-run-all clean build:sass build:css \"build:eleventy -- --pathprefix=rusticola\"",
-    "minify": "NODE_ENV=production npm-run-all clean build:sass minify:css \"minify:eleventy -- --pathprefix=rusticola\""
+    "start": "NODE_ENV=dev conc 'dev:*'",
+    "cloud": "NODE_ENV=dev npm run clean && npm run build:sass && ELEVENTY_ENV=dev build:eleventy",
+    "build": "NODE_ENV=dev npm run clean && npm run build:sass && npm run build:css && ELEVENTY_ENV=dev npm run build:eleventy -- --pathprefix=rusticola",
+    "minify": "NODE_ENV=production npm run clean && npm run build:sass && npm run minify:css && ELEVENTY_ENV=prod npm run build:eleventy -- --pathprefix=rusticola"
   },
   "repository": {
     "type": "git",
