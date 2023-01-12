@@ -9,12 +9,11 @@
     "dev:eleventy": "ELEVENTY_ENV=dev npx @11ty/eleventy-dev-server --input=docs",
     "build:sass": "sass  --no-source-map src/sass:./_tmp",
     "build:eleventy": "npx @11ty/eleventy",
-    "build:css": "lightningcss --targets '> 0.2%, last 2 versions, Firefox ESR, not dead' ./_tmp/*.css -o ./_tmp/*.css",
-    "minify:css": "npm run build:css -- --minify",
+    "prefix": "lightningcss --targets '> 0.2%, last 2 versions, Firefox ESR, not dead' ./_tmp/*.css -o ./_tmp/*.css",
     "start": "NODE_ENV=dev conc --kill-others 'dev:*'",
     "cloud": "run clean && NODE_ENV=dev npm run build:sass && NODE_ENV=dev ELEVENTY_ENV=dev npm run build:eleventy",
-    "build": "npm run clean && npm run build:sass && npm run build:css && NODE_ENV=dev ELEVENTY_ENV=dev npm run build:eleventy -- --pathprefix=rusticola",
-    "minify": "npm run clean && NODE_ENV=production npm run build:sass && NODE_ENV=production npm run minify:css && NODE_ENV=production ELEVENTY_ENV=prod npm run build:eleventy -- --pathprefix=rusticola"
+    "build": "npm run clean && npm run build:sass && npm run prefix && NODE_ENV=dev ELEVENTY_ENV=dev npm run build:eleventy -- --pathprefix=rusticola",
+    "minify": "npm run clean && npm run build:sass && npm run prefix -- --minify && NODE_ENV=production ELEVENTY_ENV=prod npm run build:eleventy -- --pathprefix=rusticola"
   },
   "repository": {
     "type": "git",
