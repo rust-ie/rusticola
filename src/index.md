@@ -45,11 +45,9 @@ The shortcode adds the js inline, which is not ideal. Going forward I will look 
 
 <is-land on:media="(min-width: 30em)">
   <shortcode-component>
-    <p>The solidify shortcode is inactive :)</p>
+    <button id="svelte-short">Click me</button>
   </shortcode-component>
   <template data-island="replace">
-    <button id="svelte-short">Click me</button>
-
 {% svelte "svelte-short" "zbundleOff" %}
 <script>
 	let count = 0;
