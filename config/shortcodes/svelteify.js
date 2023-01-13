@@ -34,5 +34,7 @@ module.exports = async (code, filename, bundled) => {
     process.exitCode = 1;
   })
   const svelteJs = await fsPromises.readFile('./docs/assets/app/sv-' + filename + '.js', 'utf8');
-  return `<script type="module">${svelteJs}</script>`;
+  return `<script type="module">${svelteJs} 
+  export default app;
+  </script>`;
 };
