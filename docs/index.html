@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>11ty-solid-base</title>
-  <link rel="stylesheet" href="/rusticola/assets/css/style.css?v=1673572073491" />
+  <link rel="stylesheet" href="/rusticola/assets/css/style.css?v=1673572310658" />
   <script type="module" defer src="/rusticola/assets/js/is-land-PZUQWAXD.min.js"></script>
 </head>
 <body>
@@ -38,14 +38,11 @@
 <h2>The svelte shortcode</h2>
 <is-land on:media="(min-width: 30em)">
   <shortcode-component-2>
-    <button id="svelte-short">Click me</button>
+    <button>Click me</button>
   </shortcode-component-2>
   <template data-island="replace">
-<script type="module">function f(){}function F(t){return t()}function O(){return Object.create(null)}function a(t){t.forEach(F)}function p(t){return typeof t=="function"}function D(t,e){return t!=t?e==e:t!==e||t&&typeof t=="object"||typeof t=="function"}function M(t){return Object.keys(t).length===0}var j=!1;function L(){j=!0}function P(){j=!1}function B(t){t.parentNode&&t.parentNode.removeChild(t)}function I(t){return Array.from(t.childNodes)}var w;function u(t){w=t}var l=[];var A=[],h=[],C=[],z=Promise.resolve(),b=!1;function H(){b||(b=!0,z.then(N))}function $(t){h.push(t)}var g=new Set,_=0;function N(){let t=w;do{for(;_<l.length;){let e=l[_];_++,u(e),G(e.$$)}for(u(null),l.length=0,_=0;A.length;)A.pop()();for(let e=0;e<h.length;e+=1){let n=h[e];g.has(n)||(g.add(n),n())}h.length=0}while(l.length);for(;C.length;)C.pop()();b=!1,g.clear(),u(t)}function G(t){if(t.fragment!==null){t.update(),a(t.before_update);let e=t.dirty;t.dirty=[-1],t.fragment&&t.fragment.p(t.ctx,e),t.after_update.forEach($)}}var W=new Set;function X(t,e){t&&t.i&&(W.delete(t),t.i(e))}var K=typeof window!="undefined"?window:typeof globalThis!="undefined"?globalThis:global;function Y(t,e,n,s){let{fragment:o,after_update:y}=t.$$;o&&o.m(e,n),s||$(()=>{let c=t.$$.on_mount.map(F).filter(p);t.$$.on_destroy?t.$$.on_destroy.push(...c):a(c),t.$$.on_mount=[]}),y.forEach($)}function T(t,e){let n=t.$$;n.fragment!==null&&(a(n.on_destroy),n.fragment&&n.fragment.d(e),n.on_destroy=n.fragment=null,n.ctx=[])}function U(t,e){t.$$.dirty[0]===-1&&(l.push(t),H(),t.$$.dirty.fill(0)),t.$$.dirty[e/31|0]|=1<<e%31}function R(t,e,n,s,o,y,c,q=[-1]){let d=w;u(t);let i=t.$$={fragment:null,ctx:[],props:y,update:f,not_equal:o,bound:O(),on_mount:[],on_destroy:[],on_disconnect:[],before_update:[],after_update:[],context:new Map(e.context||(d?d.$$.context:[])),callbacks:O(),dirty:q,skip_bound:!1,root:e.target||d.$$.root};c&&c(i.root);let x=!1;if(i.ctx=n?n(t,e.props||{},(r,k,...E)=>{let S=E.length?E[0]:k;return i.ctx&&o(i.ctx[r],i.ctx[r]=S)&&(!i.skip_bound&&i.bound[r]&&i.bound[r](S),x&&U(t,r)),k}):[],i.update(),x=!0,a(i.before_update),i.fragment=s?s(i.ctx):!1,e.target){if(e.hydrate){L();let r=I(e.target);i.fragment&&i.fragment.l(r),r.forEach(B)}else i.fragment&&i.fragment.c();e.intro&&X(t.$$.fragment),Y(t,e.target,e.anchor,e.customElement),P(),N()}u(d)}var V;typeof HTMLElement=="function"&&(V=class extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"})}connectedCallback(){let{on_mount:t}=this.$$;this.$$.on_disconnect=t.map(F).filter(p);for(let e in this.$$.slotted)this.appendChild(this.$$.slotted[e])}attributeChangedCallback(t,e,n){this[t]=n}disconnectedCallback(){a(this.$$.on_disconnect)}$destroy(){T(this,1),this.$destroy=f}$on(t,e){if(!p(e))return f;let n=this.$$.callbacks[t]||(this.$$.callbacks[t]=[]);return n.push(e),()=>{let s=n.indexOf(e);s!==-1&&n.splice(s,1)}}$set(t){this.$$set&&!M(t)&&(this.$$.skip_bound=!0,this.$$set(t),this.$$.skip_bound=!1)}});var m=class{$destroy(){T(this,1),this.$destroy=f}$on(e,n){if(!p(n))return f;let s=this.$$.callbacks[e]||(this.$$.callbacks[e]=[]);return s.push(n),()=>{let o=s.indexOf(n);o!==-1&&s.splice(o,1)}}$set(e){this.$$set&&!M(e)&&(this.$$.skip_bound=!0,this.$$set(e),this.$$.skip_bound=!1)}};function J(t){let e=0;function n(){e+=1}return[]}var v=class extends m{constructor(e){super(),R(this,e,J,null,D,{})}},et=v;export{et as default};
+<script type="module">import{SvelteComponent as _,append as r,detach as h,element as v,init as $,insert as k,listen as C,noop as m,safe_not_equal as b,set_data as d,space as S,text as f}from"svelte/internal";function g(l){let t,i,e,o,s=l[0]===1?"time":"times",u,c,p;return{c(){t=v("button"),i=f("Clicked "),e=f(l[0]),o=S(),u=f(s)},m(n,a){k(n,t,a),r(t,i),r(t,e),r(t,o),r(t,u),c||(p=C(t,"click",l[1]),c=!0)},p(n,[a]){a&1&&d(e,n[0]),a&1&&s!==(s=n[0]===1?"time":"times")&&d(u,s)},i:m,o:m,d(n){n&&h(t),c=!1,p()}}}function q(l,t,i){let e=0;function o(){i(0,e+=1)}return[e,o]}class j extends _{constructor(t){super(),$(this,t,q,g,b,{})}}var x=j;export{x as default};
 </script>
-<button id="svelte-short" on:click={handleClick}>
-	Clicked {count} {count === 1 ? 'time' : 'times'}
-</button>
   </template>
 </is-land> 
 <h2>The web component</h2>
