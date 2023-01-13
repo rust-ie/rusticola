@@ -41,12 +41,11 @@ render(() => <Solidify />, document.getElementById('shorty'))
 </is-land> 
 
 ## The svelte shortcode
-The shortcode adds the js inline, which is not ideal. Going forward I will look at an option to write to the file system.
 
 <is-land on:media="(min-width: 30em)">
-  <shortcode-component>
+  <shortcode-component-2>
     <button id="svelte-short">Click me</button>
-  </shortcode-component>
+  </shortcode-component-2>
   <template data-island="replace">
 {% svelte "svelte-short" "zbundleOff" %}
 <script>
@@ -57,7 +56,7 @@ The shortcode adds the js inline, which is not ideal. Going forward I will look 
 	}
 </script>
 
-<button idid="svelte-short" on:click={handleClick}>
+<button id="svelte-short" on:click={handleClick}>
 	Clicked {count} {count === 1 ? 'time' : 'times'}
 </button>
 {% endsvelte %}
