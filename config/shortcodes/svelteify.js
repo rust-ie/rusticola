@@ -23,7 +23,7 @@ module.exports = async (code, filename, bundled) => {
         schemes: { default_schemes },
         cache: new Map()
       }),
-      solidPlugin()
+      sveltePlugin()
     ],
     minify: isProd,
     target: isProd ? 'es6' : 'esnext'
