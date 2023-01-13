@@ -3,6 +3,7 @@ const pluginWebc = require("@11ty/eleventy-plugin-webc");
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const now = String(Date.now());
 const solidShortcode = require('./config/shortcodes/solidify.js');
+const svelteShortcode = require('./config/shortcodes/svelteify.js');
 const esbuildPipeline = require('./config/build/esbuild.js');
 const path = require("path");
 const manifest = require('./src/_data/manifest.json');
@@ -54,6 +55,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addPairedShortcode("solid", solidShortcode);
+  eleventyConfig.addPairedShortcode("svelte", svelteShortcode);
  
   // Let Eleventy transform HTML files as liquidjs
   // So that we can use .html instead of .liquid
