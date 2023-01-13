@@ -49,15 +49,15 @@ render(() => <Solidify />, document.getElementById('shorty'))
   <template data-island="replace">
 {% svelte "svelte-short" "bundleOff" %}
 <script>
-	let count = 0;
+  let count = 0;
 
-	function handleClick() {
-		count += 1;
-	}
+  function handleClick() {
+    count += 1;
+  }
 </script>
 
 <button on:click={handleClick}>
-	Clicked {count} {count === 1 ? 'time' : 'times'}
+  Clicked {count} {count === 1 ? 'time' : 'times'}
 </button>
 {% endsvelte %}
     
