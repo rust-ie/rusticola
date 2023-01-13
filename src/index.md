@@ -55,11 +55,11 @@ render(() => <Solidify />, document.getElementById('shorty'))
 		count += 1;
 	}
 </script>
+{% endsvelte %}
 
 <button id="svelte-short" on:click={handleClick}>
 	Clicked {count} {count === 1 ? 'time' : 'times'}
 </button>
-{% endsvelte %}
     
   </template>
 </is-land> 
