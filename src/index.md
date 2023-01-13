@@ -41,21 +41,13 @@ render(() => <Solidify />, document.getElementById('shorty'))
 </is-land> 
 
 ## The svelte shortcode
-
-<button class="svbtn">Click me</button>
   
 {% svelte "svelte-short" "bundleOff" %}
 <script>
-  let count = 0;
-
-  function handleClick() {
-    count += 1;
-  }
+	let name = 'world';
 </script>
 
-<button class="svbtn" on:click={handleClick}>
-  Clicked {count} {count === 1 ? 'time' : 'times'}
-</button>
+<h1>Hello {name.toUpperCase()}!</h1>
 {% endsvelte %}
 
 ## The web component
