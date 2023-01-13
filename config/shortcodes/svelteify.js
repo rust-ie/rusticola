@@ -23,7 +23,9 @@ module.exports = async (code, filename, bundled) => {
         schemes: { default_schemes },
         cache: new Map()
       }),
-      sveltePlugin()
+      sveltePlugin({
+        compilerOptions: { css: true }
+      })
     ],
     minify: isProd,
     target: isProd ? 'es6' : 'esnext'
