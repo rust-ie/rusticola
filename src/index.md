@@ -44,10 +44,10 @@ render(() => <Solidify />, document.getElementById('shorty'))
 
 <is-land on:media="(min-width: 30em)">
   <shortcode-component-2>
-    <button id="svelte-short">Click me</button>
+    <button>Click me</button>
   </shortcode-component-2>
   <template data-island="replace">
-{% svelte "svelte-short" "zbundleOff" %}
+{% svelte "svelte-short" "bundleOff" %}
 <script>
 	let count = 0;
 
@@ -55,11 +55,11 @@ render(() => <Solidify />, document.getElementById('shorty'))
 		count += 1;
 	}
 </script>
-{% endsvelte %}
 
-<button id="svelte-short" on:click={handleClick}>
+<button on:click={handleClick}>
 	Clicked {count} {count === 1 ? 'time' : 'times'}
 </button>
+{% endsvelte %}
     
   </template>
 </is-land> 
