@@ -1,7 +1,7 @@
 const esbuild = require("esbuild");
 const glob = require('glob-all'); // to enable * glob pattern in esbuild
 const isProd = process.env.ELEVENTY_ENV === 'prod' ? true : false
-const { sveltePlugin } = require('esbuild-svelte');
+const sveltePlugin = require('esbuild-svelte');
 const fsPromises = require('fs').promises;
 const { http, default_schemes } = require('@hyrious/esbuild-plugin-http');
 
