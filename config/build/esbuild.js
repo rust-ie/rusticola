@@ -17,7 +17,7 @@ module.exports = async () => {
     outExtension: isProd ? {'.js': '.min.js', '.css': '.min.css'} : {'.js': '.js', '.css': '.css'},
     bundle: true,
     watch: !isProd,
-    format: esm,
+    format: 'esm',
     minify: isProd, // so the resulting code is easier to understand in dev
     outdir: './docs/assets',
     sourcemap: !isProd,
