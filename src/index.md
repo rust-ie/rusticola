@@ -17,7 +17,7 @@ To test if the island partial hydration is working; on a mobile phone, turn the 
 </is-land>
 
 
-## The shortcode
+## The solidjs shortcode
 The shortcode adds the js inline, which is not ideal. Going forward I will look at an option to write to the file system.
 
 <is-land on:media="(min-width: 30em)">
@@ -36,6 +36,33 @@ function Solidify() {
 
 render(() => <Solidify />, document.getElementById('shorty'))
 {% endsolid %}
+    
+  </template>
+</is-land> 
+
+## The svelte shortcode
+The shortcode adds the js inline, which is not ideal. Going forward I will look at an option to write to the file system.
+
+<is-land on:media="(min-width: 30em)">
+  <shortcode-component>
+    <p>The solidify shortcode is inactive :)</p>
+  </shortcode-component>
+  <template data-island="replace">
+    <button id="svelte-short">Click me</button>
+
+{% svelte "svelte-short" "zbundleOff" %}
+<script>
+	let count = 0;
+
+	function handleClick() {
+		count += 1;
+	}
+</script>
+
+<button idid="svelte-short" on:click={handleClick}>
+	Clicked {count} {count === 1 ? 'time' : 'times'}
+</button>
+{% endsvelte %}
     
   </template>
 </is-land> 
