@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>11ty-solid-base</title>
-  <link rel="stylesheet" href="/rusticola/assets/css/style.css?v=1673573512541" />
+  <link rel="stylesheet" href="/rusticola/assets/css/style.css?v=1673573771576" />
   <script type="module" defer src="/rusticola/assets/js/is-land-PZUQWAXD.min.js"></script>
 </head>
 <body>
@@ -36,15 +36,9 @@
   </template>
 </is-land> 
 <h2>The svelte shortcode</h2>
-<is-land on:media="(min-width: 30em)">
-  <shortcode-component-2>
-    <button class="svbtn">Click me</button>
-  </shortcode-component-2>
-  <template data-island="replace">
+<p><button class="svbtn">Click me</button></p>
 <script type="module">import{SvelteComponent as _,append as r,attr as v,detach as h,element as $,init as b,insert as k,listen as C,noop as m,safe_not_equal as S,set_data as d,space as g,text as f}from"svelte/internal";function q(l){let t,s,e,i,o=l[0]===1?"time":"times",u,c,p;return{c(){t=$("button"),s=f("Clicked "),e=f(l[0]),i=g(),u=f(o),v(t,"class","svbtn")},m(n,a){k(n,t,a),r(t,s),r(t,e),r(t,i),r(t,u),c||(p=C(t,"click",l[1]),c=!0)},p(n,[a]){a&1&&d(e,n[0]),a&1&&o!==(o=n[0]===1?"time":"times")&&d(u,o)},i:m,o:m,d(n){n&&h(t),c=!1,p()}}}function j(l,t,s){let e=0;function i(){s(0,e+=1)}return[e,i]}class w extends _{constructor(t){super(),b(this,t,j,q,S,{})}}var z=w;export{z as default};
 </script>
-  </template>
-</is-land> 
 <h2>The web component</h2>
 <p><web-component></web-component></p>
 <p>To do:</p>
