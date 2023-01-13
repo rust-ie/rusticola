@@ -17,6 +17,11 @@ module.exports = async () => {
     outExtension: isProd ? {'.js': '.min.js', '.css': '.min.css'} : {'.js': '.js', '.css': '.css'},
     bundle: true,
     watch: !isProd,
+    format: esm,
+    minify: isProd,
+    outdir: './docs/assets',
+    sourcemap: !isProd,
+    target: isProd ? 'es6' : 'esnext',
     plugins: [
       http({
         filter: (url) => true,
@@ -40,10 +45,6 @@ module.exports = async () => {
           ),
         })
     ],
-    minify: isProd,
-    outdir: './docs/assets',
-    sourcemap: !isProd,
-    target: isProd ? 'es6' : 'esnext',
     metafile: true,
   }).catch((error) => {
     console.error(error);
