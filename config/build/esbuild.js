@@ -18,7 +18,7 @@ module.exports = async () => {
     bundle: true,
     watch: !isProd,
     format: esm,
-    minify: isProd,
+    minify: isProd, // so the resulting code is easier to understand in dev
     outdir: './docs/assets',
     sourcemap: !isProd,
     target: isProd ? 'es6' : 'esnext',
